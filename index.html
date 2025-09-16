@@ -6,7 +6,7 @@
     <title>Serpientes y escaleras Matemático</title>
     <link rel="stylesheet" href="style.css" />
     <!-- Icon -->
-    <link rel="icon" type="image/x-icon" href="icon.png" />
+    <link rel="icon" type="image/x-icon" href="images/icon.png" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -16,35 +16,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
-    <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden; /* evita barras de scroll */
-  }
-
-  #tablero, canvas {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-</style>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden; /* 🔴 evita barras de scroll */
-  }
-
-  #contenedor-principal {  /* reemplaza con el ID de tu contenedor */
-    height: 100%;
-    width: 100%;
-  }
-</style>
   </head>
   <body>
     <!-- Pantalla de inicio -->
@@ -82,7 +53,7 @@
                 <span class="material-symbols-outlined">keyboard_arrow_left</span>
               </div>
               <div class="selectImage">
-                <img src="1.png" id="profile1" />
+                <img src="images/avatars/1.png" id="profile1" />
               </div>
               <div class="arrow" onclick="updateUserProfile(1,1)">
                 <span class="material-symbols-outlined">keyboard_arrow_right</span>
@@ -107,7 +78,7 @@
                 <span class="material-symbols-outlined">keyboard_arrow_left</span>
               </div>
               <div class="selectImage">
-                <img src="0.png" id="profile2" />
+                <img src="images/avatars/0.png" id="profile2" />
               </div>
               <div class="arrow" onclick="updateUserProfile(2,1)">
                 <span class="material-symbols-outlined">keyboard_arrow_right</span>
@@ -132,7 +103,7 @@
                 <span class="material-symbols-outlined">keyboard_arrow_left</span>
               </div>
               <div class="selectImage">
-                <img src="3.png" id="profile3" />
+                <img src="images/avatars/3.png" id="profile3" />
               </div>
               <div class="arrow" onclick="updateUserProfile(3,1)">
                 <span class="material-symbols-outlined">keyboard_arrow_right</span>
@@ -157,7 +128,7 @@
                 <span class="material-symbols-outlined">keyboard_arrow_left</span>
               </div>
               <div class="selectImage">
-                <img src="4.png" id="profile4" />
+                <img src="images/avatars/4.png" id="profile4" />
               </div>
               <div class="arrow" onclick="updateUserProfile(4,1)">
                 <span class="material-symbols-outlined">keyboard_arrow_right</span>
@@ -186,7 +157,7 @@
       <div class="container">
         <div class="boardArea">
           <div class="bigBoard">
-            <img src="board.png" class="board" />
+            <img src="images/board.png" class="board" />
             <div class="potsBoard" id="board"></div>
           </div>
         </div>
@@ -194,7 +165,7 @@
           <div class="playersBox">
             <div class="playerCard" id="playerCard1">
               <div class="level1">
-                <img src="avatars/1.png" id="avatar1" />
+                <img src="images/avatars/1.png" id="avatar1" />
                 <div id="dice1" class="diceBox" onclick="rollDice(1)">
                   <i class="diceImg fas fa-dice-one"></i>
                 </div>
@@ -205,7 +176,7 @@
             </div>
             <div class="playerCard" id="playerCard2">
               <div class="level1">
-                <img src="2.png" id="avatar2" />
+                <img src="images/avatars/2.png" id="avatar2" />
                 <div id="dice2" class="diceBox" onclick="rollDice(2)">
                   <i class="diceImg fas fa-dice-one"></i>
                 </div>
@@ -216,7 +187,7 @@
             </div>
             <div class="playerCard" id="playerCard4">
               <div class="level1">
-                <img src="4.png" id="avatar4" />
+                <img src="images/avatars/4.png" id="avatar4" />
                 <div id="dice4" class="diceBox" onclick="rollDice(4)">
                   <i class="diceImg fas fa-dice-one"></i>
                 </div>
@@ -227,7 +198,7 @@
             </div>
             <div class="playerCard" id="playerCard3">
               <div class="level1">
-                <img src="3.png" id="avatar3" />
+                <img src="images/avatars/3.png" id="avatar3" />
                 <div id="dice3" class="diceBox" onclick="rollDice(3)">
                   <i class="diceImg fas fa-dice-one"></i>
                 </div>
@@ -244,7 +215,7 @@
     <!-- Modal de victoria -->
     <div class="modal hide" id="modal">
       <div class="modalBody">
-        <img src="0.png" id="wimg" />
+        <img src="images/avatars/0.png" id="wimg" />
         <h1>Winner is <span id="wname"></span></h1>
         <button class="startBtn" onclick="window.location.reload()">
           New Game
@@ -270,13 +241,13 @@
 </div>
 
     <!-- Audios -->
-    <audio src="drop.mp3" id="drop" style="display: none"></audio>
-    <audio src="ladder.mp3" id="ladder" style="display: none"></audio>
-    <audio src="snake.mp3" id="snake" style="display: none"></audio>
-    <audio src="dice.mp3" id="diceAudio" style="display: none"></audio>
-    <audio src="success.mp3" id="success" style="display: none"></audio>
+    <audio src="audio/drop.mp3" id="drop" style="display: none"></audio>
+    <audio src="audio/ladder.mp3" id="ladder" style="display: none"></audio>
+    <audio src="audio/snake.mp3" id="snake" style="display: none"></audio>
+    <audio src="audio/dice.mp3" id="diceAudio" style="display: none"></audio>
+    <audio src="audio/success.mp3" id="success" style="display: none"></audio>
 <!-- Música de fondo -->
-<audio id="bgMusic" src="bgMusic.mp3" loop></audio>
+<audio id="bgMusic" src="audio/bgMusic.mp3" loop></audio>
     <script src="script.js"></script>
   </body>
 </html>
